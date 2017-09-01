@@ -1,0 +1,78 @@
+html {
+  background: #f7f7f7;
+  max-width: 966px;
+  margin: 0 auto;
+  overflow-x: hidden;
+}
+body,
+button,
+input,
+select,
+textarea {
+  font-family: 'Avenir', '微软雅黑', Arial, Helvetica, sans-serif;
+  color: #454545;
+  line-height: 1;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: normal;
+}
+.mask {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.mask .msg-box {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 13.65333333rem;
+  background-color: #fff;
+  border-radius: 0.32rem;
+  font-size: 0.72533333rem;
+  text-align: center;
+}
+.mask .msg-box .msg {
+  min-height: 1.92rem;
+  padding-top: 0.85333333rem;
+  padding-bottom: 0.42666667rem;
+  line-height: 1.5;
+}
+.mask .msg-box .close {
+  height: 1.92rem;
+  line-height: 1.92rem;
+  border-top: 1px solid #ccc;
+  color: #f26a40;
+  border-bottom-right-radius: 0.32rem;
+  border-bottom-left-radius: 0.32rem;
+}
+.mask .msg-box .close:active {
+  background-color: #ccc;
+}
+.btn {
+  display: block;
+  margin: 1.28rem auto;
+  width: 13.44rem;
+  height: 1.92rem;
+  border-radius: 4px;
+  background-color: #ff8442;
+  line-height: 1.92rem;
+  text-align: center;
+  font-size: 0.72533333rem;
+  color: #fff;
+}
+.btn:active {
+  background-color: #e96824;
+}
