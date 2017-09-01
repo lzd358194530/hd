@@ -1,6 +1,6 @@
 # hdshop
 
-> A Vue.js project
+> vue-cli +vuex 登陆状态管理demo
 
 ## Build Setup
 
