@@ -1,20 +1,15 @@
 <template>
   <div>
-    <router-view></router-view>
-    <FootBar></FootBar>
+    msg
   </div>
 </template>
 
 <script>
-import FootBar from '../../components/footbar'
   export default {
     data() {
       return {
         
       }
-    },
-    components:{
-      FootBar
     }
   }
 </script>

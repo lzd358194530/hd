@@ -1,3 +1,9 @@
+
+@font-face {
+ font-family: 'PingFang';
+ src: url('../font/PingFang-Medium.ttf');
+}
+
 html {
   background: #f7f7f7;
   max-width: 966px;
@@ -9,7 +15,7 @@ button,
 input,
 select,
 textarea {
-  font-family: 'Avenir', '微软雅黑', Arial, Helvetica, sans-serif;
+  font-family: 'PingFang','Avenir', '微软雅黑', Arial, Helvetica, sans-serif;
   color: #454545;
   line-height: 1;
 }
@@ -63,7 +69,7 @@ h6 {
 }
 .btn {
   display: block;
-  margin: 1.28rem auto;
+  margin: 0 auto;
   width: 13.44rem;
   height: 1.92rem;
   border-radius: 4px;
@@ -75,4 +81,19 @@ h6 {
 }
 .btn:active {
   background-color: #e96824;
+}
+header{
+  height:2.13333333rem;
+  background-color:#ffb74d;
+  color:#fff;
+  font-size:.768rem;
+}
+.content{
+  position:absolute;
+  overflow-y: auto;
+  width:16rem;
+  top:2.13333333rem;
+  bottom:0;
+  padding-bottom:2.34666667rem;
+  min-height:10.24rem;
 }

@@ -3,12 +3,12 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
-import tools from './util/js/tools'
+import { setGlobalFontSize } from './util/js/tools'
 import store from './store'
 import './util/css/reset.css'
 import './util/css/common.css'
 
-tools.setGlobalFontSize(16);
+setGlobalFontSize(16);
 Vue.config.productionTip = false
 
 //优先执行  状态检查        

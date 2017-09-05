@@ -4,7 +4,7 @@ import mutations from './mutations'
 import actions from './actions'
 import getters from './getters'
 import state from './state'
-import axios from 'axios'
+import {vuexToLocalStorage} from '../util/js/tools.js'
 
 Vue.use(Vuex)
 
@@ -12,5 +12,7 @@ export default new Vuex.Store({
   state,
   getters,
   actions,
-  mutations
+  mutations,
+  //vuex 数据本地localStorage 存储
+  plugins: [vuexToLocalStorage]
 })

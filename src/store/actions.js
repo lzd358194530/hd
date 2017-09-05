@@ -1,4 +1,3 @@
-import tools from '../util/js/tools'
 /**
  *  验证登陆状态 checkLogin
  *  退出登陆 loginOut
