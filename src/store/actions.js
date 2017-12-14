@@ -5,7 +5,7 @@
  */
 
 //登陆
-const loginIn = ({ commit},userInfo)=>{
+const loginIn = ({commit},userInfo)=>{
   commit('LOGIN_IN',userInfo)
 }
 

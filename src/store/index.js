@@ -16,3 +16,4 @@ export default new Vuex.Store({
   //vuex 数据本地localStorage 存储
   plugins: [vuexToLocalStorage]
 })
+ 

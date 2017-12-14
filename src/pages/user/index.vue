@@ -1,24 +1,20 @@
 <template>
   <div>
-    <router-view></router-view>
-    <FootBar></FootBar>
+    <transition name="slide">
+      <keep-alive>
+        <router-view class="child-view"></router-view>
+      </keep-alive>
+    </transition>
+    <Footbar></Footbar>
   </div>
 </template>
-
 <script>
-import FootBar from '../../components/footbar'
   export default {
-    data() {
-      return {
-        
-      }
-    },
     components:{
-      FootBar
+      Footbar:()=>import('../../components/footbar')
     }
   }
 </script>
 
-<style scoped>
-
+<style lang="less" scoped>
 </style>

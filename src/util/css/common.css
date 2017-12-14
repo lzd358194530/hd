@@ -5,10 +5,11 @@
 }
 
 html {
-  background: #f7f7f7;
-  max-width: 966px;
+  background: #fcf8f5;
+  max-width: 768px;
+  min-width: 320px;
   margin: 0 auto;
-  overflow-x: hidden;
+  overflow: hidden;
 }
 body,
 button,
@@ -27,73 +28,381 @@ h5,
 h6 {
   font-weight: normal;
 }
-.mask {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 10;
-  background-color: rgba(0, 0, 0, 0.5);
+i{
+  font-style: normal;
 }
-.mask .msg-box {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  left: 0;
-  right: 0;
-  margin: auto;
-  width: 13.65333333rem;
-  background-color: #fff;
-  border-radius: 0.32rem;
-  font-size: 0.72533333rem;
-  text-align: center;
-}
-.mask .msg-box .msg {
-  min-height: 1.92rem;
-  padding-top: 0.85333333rem;
-  padding-bottom: 0.42666667rem;
-  line-height: 1.5;
-}
-.mask .msg-box .close {
-  height: 1.92rem;
-  line-height: 1.92rem;
-  border-top: 1px solid #ccc;
-  color: #f26a40;
-  border-bottom-right-radius: 0.32rem;
-  border-bottom-left-radius: 0.32rem;
-}
-.mask .msg-box .close:active {
-  background-color: #ccc;
-}
+/* 按钮通用 */
 .btn {
   display: block;
   margin: 0 auto;
   width: 13.44rem;
   height: 1.92rem;
   border-radius: 4px;
-  background-color: #ff8442;
+  background-color: #ffb64d;
   line-height: 1.92rem;
   text-align: center;
   font-size: 0.72533333rem;
   color: #fff;
+  border:none;
+  outline:0
 }
 .btn:active {
-  background-color: #e96824;
+  background-color: #f2a22f;
 }
+.btn-bottom{
+  margin-top: .64rem;
+}
+/* 头部区域样式 */
 header{
   height:2.13333333rem;
   background-color:#ffb74d;
   color:#fff;
   font-size:.768rem;
+  position:relative;
 }
+header.title{
+  text-align: center;
+  line-height: 3;
+}
+/* 返回按钮样式 */
+header .back{
+  position:absolute;
+  left:0;
+  top:0;
+  width:2.34666667rem;
+  height:2.13333333rem;
+  background-image: url(../images/arrow-back.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: .384rem .74666667rem;
+}
+header .header-btn{
+  position:absolute;
+  height:100%;
+  width:4.26666667rem;
+  right:0;
+  top:0;
+  font-size: .59733333rem;
+  line-height: 2.56rem;
+}
+/* 搜索按钮样式 */
+.search{
+  position:absolute;
+  right:0;
+  top:0;
+  width:2.34666667rem;
+  height:2.13333333rem;
+  background-image: url(../images/_business-search-btn.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: .93866667rem;
+}
+.icon-date{
+  position:absolute;
+  right:0;
+  top:0;
+  width:2.34666667rem;
+  height:2.13333333rem;
+  background-image: url(../images/date.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: .93866667rem;
+}
+.icon-search2{
+  position:absolute;
+  right:0;
+  top:0;
+  width:2.34666667rem;
+  height:2.13333333rem;
+  background-image: url(../images/icon-search2.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: .93866667rem;
+}
+/* 搜索框样式 */
+.search-input{
+  position:absolute;
+  display:block;
+  left:0;
+  right:0;
+  top:0;
+  bottom:0;
+  margin:auto;
+  width:11.52rem;
+  height:2.13333333rem;
+  padding: .42666667rem 0;
+}
+.search-input::before{
+  content:"";
+  position:absolute;
+  left:.46933333rem/* 22px */;
+  top:.74666667rem;
+  display:block;
+  width:.64rem;
+  height:.64rem;
+  background-image: url(../images/_business-search.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.search-input input{
+  vertical-align:top;
+  height:1.28rem;
+  width:100%;
+  border-radius:1.28rem;
+  font-size:.59733333rem;
+  text-indent: 1.70666667rem;
+}
+/* 内容区域样式 */
 .content{
   position:absolute;
   overflow-y: auto;
   width:16rem;
   top:2.13333333rem;
   bottom:0;
-  padding-bottom:2.34666667rem;
-  min-height:10.24rem;
+}
+/* 标题  查看更多>*/
+p.text-title{
+  padding: 0 .32rem;
+  font-size: .59733333rem;
+  line-height:3.2;
+}
+p.text-title a{
+  position:relative;
+  float:right;
+  color:#576b95;
+  padding-right:.512rem;
+}
+p.text-title a:after{
+  content:'';
+  display:block;
+  position:absolute;
+  right:0;
+  top:.64rem;
+  height:.59733333rem;
+  width:.29866667rem;
+  background-image: url(../images/arrow-title.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+.left{
+  float:left
+}
+.right{
+  float:right
+}
+input{
+  outline: none;
+}
+.icon-address{
+  padding: .32rem 0 .32rem 1.06666667rem ;
+  background-image: url(../images/address.png);
+  background-repeat: no-repeat;
+  background-size: .68266667rem .85333333rem;
+  background-position: 0 center;
+}
+/* 底部1像素边框 */
+.border{
+  position:relative;
+}
+.border::after{
+  content:"";
+  position:absolute;
+  right:0;
+  bottom:0;
+  width:100%;
+  border-bottom: 1px solid #e5e5e5;
+  transform:scaleY(.5);
+}
+
+/* 单行文字超出隐藏 */
+.textoverflow{
+  overflow:hidden;
+  text-overflow: ellipsis;
+  white-space:nowrap;
+}
+/* 右边箭头 */
+.icon-arrow{
+  display:block;
+  position:absolute;
+  height:.59733333rem;
+  width:.29866667rem;
+  background-image: url(../images/icon-arrow.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+/* switch-bar */
+.switch-bar{
+  position:relative;
+  margin:.64rem auto;
+  height:1.62133333rem/* 76px */;
+  width:13.01333333rem/* 610px */;
+  border-radius:.81066667rem;
+  background-color: #ecedf1;
+  color:#959698;
+  line-height:1.62133333rem;
+  text-align:center;
+  overflow:hidden;
+  font-size: .59733333rem;
+}
+.switch-bar span{
+  position:absolute;
+  display:block;
+  width:50%;
+  height:100%;
+  top:0;
+  z-index: 2;
+  transition: all .2s;
+}
+.switch-bar span.active{
+  color:#71452a;
+}
+.switch-bar span:first-child{
+  left:0
+}
+.switch-bar span:last-child{
+  right:0
+}
+.switch-bar .mask{
+  transition: all .2s;
+  position:absolute;
+  left:0;
+  top:0;
+  background-color: #ffb64d;
+  height:100%;
+  width:50%;
+  border-radius:1.62133333rem
+} 
+.switch-bar.active .mask{
+  transform:translateX(100%)
+} 
+
+/* 商品 店铺列表 */
+.item{
+  position:relative;
+  padding:.512rem .768rem;
+  height:4.26666667rem;
+  font-size:0;
+  background-color: #fff;
+}
+.item-info{
+  display:inline-block;
+  width:10.09333333rem;
+  height:3.2rem;
+  vertical-align: top;
+  padding-left: 1.024rem;
+  font-size:.59733333rem;
+  line-height:1.1rem;
+  color:#626262;
+}
+.item-logo{  
+  display:inline-block;
+  width:3.2rem;
+  height:3.2rem;
+  vertical-align: top;
+  border:1px solid #e0e0e0;
+  border-radius: .34133333rem;
+}
+
+.icon{
+  display:inline-block;
+  background-repeat: no-repeat;
+  background-size: cover;
+  vertical-align:middle
+}
+
+/* 表单 */
+.input-group{
+  display:block;
+  height:1.92rem;
+  font-size:.59733333rem;
+  background-color: #fff;
+}
+.input-group .right{
+  height:100%;
+}
+.input-group .input-title{
+  display:inline-block;
+  height:100%;
+  width: 3.84rem;
+  line-height:1.92rem;
+  text-align: center;
+  color:#ffb74d;
+}
+.input-group .input{
+  height:100%;
+  background: none;
+  width:11.30666667rem;
+  padding-right:.704rem;
+}
+.input-group .code{
+  width:11.30666667rem;
+}
+.input-group .code .input{
+  width:6.3rem;
+}
+.input-group .code .code-btn{
+  width:5rem;
+  background-color: #ffb64d;
+  color:#fff;
+  text-align:center;
+  line-height:1.92rem;
+}
+.input-group .code .code-btn.active{
+  background-color: #f2a22f;
+}
+/* 小标题 */
+.form-title{
+  padding:0 .64rem;
+  height:1.28rem;
+  line-height:1.28rem;
+  font-size: .512rem;
+  color:#666
+}
+
+/* icon Toast */
+/* .icon-success{
+  height:4.26666667rem;
+  background-image: url('../images/addcard.png');
+} */
+
+/* mixin */
+.mint-cell-wrapper{
+  background-image: none!important;
+}
+.mint-tabbar .mint-tab-item-icon{
+  width:1.024rem;
+  height:1.024rem;
+  margin:0 auto;
+}
+.mint-tabbar .mint-tab-item{
+  padding-bottom: 0;
+}
+.mint-tabbar .mint-tab-item-icon i{
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.mint-tabbar .mint-tab-item-label{
+  font-size:.59733333rem;
+  line-height:1.5
+}
+.mint-tab-container-wrap{
+  height:100%;
+}
+.mint-cell-wrapper{
+  font-size:.64rem!important;
+}
+.picker{
+  width:16rem;
+}
+.picker-btn-group{
+  overflow: hidden;
+  color:#ffb74d;
+}
+.picker-btn-group span{
+  padding: .5rem 1.6rem;
+  font-size:.64rem;
+}
+.date-picker{
+  font-size:.6rem!important;
 }

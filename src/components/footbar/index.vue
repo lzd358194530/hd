@@ -1,6 +1,6 @@
 <template>
   <ul class="footer">
-    <li><router-link to="/" ><i class="index"></i>首页</router-link></li>
+    <li><router-link to="/home" ><i class="index"></i>首页</router-link></li>
     <li><router-link to="/msg" ><i class="msg"></i>消息</router-link></li>
     <li><router-link to="/shop" ><i class="shop"></i>店铺</router-link></li>
     <li><router-link to="/center" ><i class="center"></i>个人中心</router-link></li>
@@ -11,6 +11,7 @@
   export default {
     data() {
       return {
+        active:0
       }
     }
   }
@@ -22,8 +23,16 @@
     bottom: 0;
     height: 2.34666667rem;
     width: 16rem;
-    border-top:1px solid #e9e8e9;
     background-color: #fff;
+    &:before{
+      content:'';
+      display:block;
+      left:0;
+      top:0;
+      width:100%;
+      border-top:1px solid #e9e8e9;
+      transform:scaleY(.5)
+    }
     li{
       position:relative;
       float: left;
@@ -35,7 +44,7 @@
       position:relative;
       height:100%;
       padding-top:1.536rem;
-      font-size:.59733333rem;
+      font-size:.512rem;
       text-align: center;
       color:#999;
       i{
@@ -64,18 +73,23 @@
     }
     .router-link-exact-active{
       color:#ffab2e;
+      animation: footbar .3s cubic-bezier(.55,0,.1,1);
       .index{
         background-image: url('images/footer-index-active.png');
       }
       .msg{
-        background-image: url('images/footer-msg.png');
+        background-image: url('images/footer-msg-active.png');
       }
       .shop{
         background-image: url('images/footer-shop-active.png');
       }
       .center{
-        background-image: url('images/footer-center.png');
+        background-image: url('images/footer-center-active.png');
       }
     }
+  }
+  @keyframes footbar {
+    from {transform:scale(0)}
+    to {transform:scale(1)}
   }
 </style>

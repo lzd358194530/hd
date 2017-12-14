@@ -29,7 +29,7 @@ export default {
   //页面刷新执行一次
   CHECK_LOGIN(state){
     let userInfo = cookie.getCookie('userInfo');
-    if(userInfo){
+    if(userInfo&&userInfo!={}){
       state.login = true
       state.userInfo = {...JSON.parse(userInfo)}
       cookie.setCookie('userInfo',userInfo)

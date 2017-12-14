@@ -1,9 +1,9 @@
 <template>
   <div id="app">
-    <transition name="pg">
-      <keep-alive>
-        <router-view></router-view>
-      </keep-alive>
+    <transition name="slide">
+      <!-- <keep-alive exclude="nokeep"> -->
+        <router-view class="child-view"></router-view>
+      <!-- </keep-alive> -->
     </transition>
   </div>
 </template>
@@ -14,21 +14,21 @@ export default {
 }
 </script>
 
-<style scoped>
+<style>
   #app{
     height: 100%;
   }
-  .pg-enter{
-    transform: translate(-100%);
-  }
-  .pg-enter-active,
-  .pg-leave-active{
+  .child-view {
     position: absolute;
-    top: 0;
-    width: 100%;
-    transition: all .5s;
+    width:16rem;
+    height: 100%;
+    transition: all .5s cubic-bezier(.55,0,.1,1);
+    /* transition: all .5s; */
   }
-  .pg-leave-to{
-    transform: translate(100%);
+  .slide-enter{
+    opacity: 0;
+  }
+  .slide-leave-active{
+    opacity: 0;
   }
 </style>
