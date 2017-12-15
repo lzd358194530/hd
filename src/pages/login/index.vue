@@ -1,16 +1,24 @@
 <template>
   <div class="wrap">
-    <img src="./logo.png" class="logo">
+    <img 
+      src="./logo.png"
+      class="logo">
     <div class="login">
       <p>手机号码:</p>
-      <input type="text"
-       v-model.lazy="userInfo.name">
+      <input 
+        type="text"
+        v-model.lazy="userInfo.name">
       <p>密码:</p>
-      <input type="password"
-       v-model.lazy="userInfo.pwd">
-       <router-link to="/password" class="forget">忘记密码</router-link>
+      <input 
+        type="password"
+        v-model.lazy="userInfo.pwd">
+      <router-link 
+        to="/password" 
+        class="forget">忘记密码</router-link>
       <!-- <span class="forget">忘记密码</span> -->
-      <div @click="loginIn" class="btn">登录</div>
+      <div 
+        @click="loginIn" 
+        class="btn">登录</div>
     </div>
   </div>
 </template>
