@@ -31,162 +31,166 @@
   </div>
 </template>
 <script>
-  import datePicker from '../../components/datepicker' 
-  export default{
-    data(){
-      return {
-        date:'2017-01',
-        loading:false,
-        list:[],
-        year:'',
-        month:'',
-        showPopup:false,
-        //排序类型 1 销售额大到小 2 销量小到大 3 销量大到小 4 销量小到大
-        sortType:1,
+import datePicker from "../../components/datepicker";
+export default {
+  data() {
+    return {
+      date: "2017-01",
+      loading: false,
+      list: [],
+      year: "",
+      month: "",
+      showPopup: false,
+      //排序类型 1 销售额大到小 2 销量小到大 3 销量大到小 4 销量小到大
+      sortType: 1
+    };
+  },
+  components: {
+    datePicker
+  },
+  created() {
+    this.setData();
+    this.setDate();
+  },
+  methods: {
+    openPicker(date) {
+      this.showPopup = !this.showPopup;
+      if (date) {
+        let { year, month } = date;
+        if (year && month) {
+          this.date = year + "-" + month;
+        }
       }
     },
-    components:{
-      datePicker
-    },
-    created(){
-      this.setData()
-      this.setDate()
-    },
-    methods:{
-      openPicker(date) {
-        this.showPopup = !this.showPopup
-        if(date){
-          let {year,month} = date;
-          if(year&&month){
-            this.date = year+'-'+month
-          }
+    onSort(e) {
+      let id = e.target.id,
+        sortType = this.sortType;
+      if (id == "count") {
+        if (sortType == 1) {
+          this.sortType = 2;
+        } else {
+          this.sortType = 1;
         }
-      },
-      onSort(e){
-        let id = e.target.id,
-            sortType= this.sortType;
-        if(id=='count'){
-          if(sortType==1){
-            this.sortType = 2
-          }else{
-            this.sortType = 1
-          }
-        }else{
-          if(sortType==3){
-            this.sortType = 4
-          }else{
-            this.sortType = 3
-          }
+      } else {
+        if (sortType == 3) {
+          this.sortType = 4;
+        } else {
+          this.sortType = 3;
         }
-        this.sortList()
-      },
-      // 排序
-      sortList(){
-        const sortFn={
-          sort1 : (a,b)=> b.total-a.total,
-          sort2 : (a,b)=> a.total-b.total,
-          sort3 : (a,b)=> b.sales-a.sales,
-          sort4 : (a,b)=> a.sales-b.sales
-        }
-        this.list = this.list.sort(sortFn['sort'+this.sortType]);
-      },
-      setDate(){
-        let date = new Date(),
-            year = date.getFullYear(),
-            month = date.getMonth()+1;
-        this.date = year+'-'+month
-      },
-      goBack(){
-        this.$router.go(-1)
-      },
-      loadMore(){
-        console.log('加载更多')
-      },
-      // 绑定数据
-      setData(){
-        this.list = this.getData().concat([]);
-        this.sortList()
-      },
-      // 获取数据
-      getData(){
-        let list = [
-          {
-            id:'012',
-            name:'乐事薯片（青柠味）',
-            price:'8.50',
-            sales:'10',
-            total:'4.50'
-          },{
-            id:'012',
-            name:'乐事薯片（青柠味）',
-            price:'8.50',
-            sales:'20',
-            total:'500.50'
-          },{
-            id:'012',
-            name:'乐事薯片（青柠味）',
-            price:'8.50',
-            sales:'30',
-            total:'30.50'
-          },{
-            id:'012',
-            name:'乐事薯片（青柠味）',
-            price:'8.50',
-            sales:'40',
-            total:'200.50'
-          },{
-            id:'012',
-            name:'乐事薯片（青柠味）',
-            price:'8.50',
-            sales:'50',
-            total:'100.50'
-          }
-        ];
-        return list
       }
+      this.sortList();
+    },
+    // 排序
+    sortList() {
+      const sortFn = {
+        sort1: (a, b) => b.total - a.total,
+        sort2: (a, b) => a.total - b.total,
+        sort3: (a, b) => b.sales - a.sales,
+        sort4: (a, b) => a.sales - b.sales
+      };
+      this.list = this.list.sort(sortFn["sort" + this.sortType]);
+    },
+    setDate() {
+      let date = new Date(),
+        year = date.getFullYear(),
+        month = date.getMonth() + 1;
+      this.date = year + "-" + month;
+    },
+    goBack() {
+      this.$router.go(-1);
+    },
+    loadMore() {
+      console.log("加载更多");
+    },
+    // 绑定数据
+    setData() {
+      this.list = this.getData().concat([]);
+      this.sortList();
+    },
+    // 获取数据
+    getData() {
+      let list = [
+        {
+          id: "012",
+          name: "乐事薯片（青柠味）",
+          price: "8.50",
+          sales: "10",
+          total: "4.50"
+        },
+        {
+          id: "012",
+          name: "乐事薯片（青柠味）",
+          price: "8.50",
+          sales: "20",
+          total: "500.50"
+        },
+        {
+          id: "012",
+          name: "乐事薯片（青柠味）",
+          price: "8.50",
+          sales: "30",
+          total: "30.50"
+        },
+        {
+          id: "012",
+          name: "乐事薯片（青柠味）",
+          price: "8.50",
+          sales: "40",
+          total: "200.50"
+        },
+        {
+          id: "012",
+          name: "乐事薯片（青柠味）",
+          price: "8.50",
+          sales: "50",
+          total: "100.50"
+        }
+      ];
+      return list;
     }
   }
+};
 </script>
 <style lang="less" scoped>
-  .content{
-    top:4.26666667rem;
-    font-size:.59733333rem;
-  }
-  .navbar{
-    position: relative;
-    height:2.13333333rem;
-    background-color: #ebebeb;
-    font-size:.59733333rem;
-    .nav-item{
-      height:100%;
-      width: 5.54666667rem/* 260px */;
-      float:left;
-      line-height:2.13333333rem;
-      text-align: center;
-      i{
-        display:inline-block;
-        width:.40533333rem;
-        height:.448rem;
-        background-image: url(./images/arrow-btn.png);
-        background-repeat: no-repeat;
-        background-size: cover;
-      }
-    }
-    .nav-item:active{
-      background-color: #ccc;
-    }
-    .active{
-      background-color: #ddd;
+.content {
+  top: 4.26666667rem;
+  font-size: 0.59733333rem;
+}
+.navbar {
+  position: relative;
+  height: 2.13333333rem;
+  background-color: #ebebeb;
+  font-size: 0.59733333rem;
+  .nav-item {
+    height: 100%;
+    width: 5.54666667rem;
+    float: left;
+    line-height: 2.13333333rem;
+    text-align: center;
+    i {
+      display: inline-block;
+      width: 0.40533333rem;
+      height: 0.448rem;
+      background-image: url(./images/arrow-btn.png);
+      background-repeat: no-repeat;
+      background-size: cover;
     }
   }
-  .item{
-    padding: .64rem;
-    background-color: #fff;
-    line-height:1.03rem;
-    font-size: .55466667rem;
-    .name{
-      font-weight:600;
-      color: #3e3e3e
-    }
+  .nav-item:active {
+    background-color: #ccc;
   }
+  .active {
+    background-color: #ddd;
+  }
+}
+.item {
+  padding: 0.64rem;
+  background-color: #fff;
+  line-height: 1.03rem;
+  font-size: 0.55466667rem;
+  .name {
+    font-weight: 600;
+    color: #3e3e3e;
+  }
+}
 </style>
