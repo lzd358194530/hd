@@ -10,8 +10,8 @@ import app from '../App'
 const login = () =>
     import ('../pages/login')
 //忘记密码
-// const password = () =>
-    // import ('../pages/password')
+const password = () =>
+    import ('../pages/password')
 const user = () =>
     import ('../pages/user')
 //加载消息
@@ -185,6 +185,10 @@ export default new Router({
     { //验证
         path: "/verify",
         component: verify
+    },
+    { //验证
+        path: "/password",
+        component: password
     }
     ],
 })
