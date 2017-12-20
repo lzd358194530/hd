@@ -20,8 +20,9 @@
 </template>
 
 <script>
-import AreaPicker from '../../components/areaPicker'
+import AreaPicker from './areaPicker/AreaPicker.vue'
 export default {
+  name: 'Demo',
   data () {
     return {
       areaInputText: '',
