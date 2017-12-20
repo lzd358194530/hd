@@ -49,6 +49,29 @@ router.beforeEach((to, from, next) => {
   }
 })
 
+//全局指令
+Vue.directive('back',{
+  bind:(el,binding)=>{
+    el.addEventListener('click',()=>{
+      if(binding.value==undefined){
+        router.go(-1);
+      }else{
+        router.replace(binding.value)
+      }
+    })
+  },
+  //使用缓存 keepalive 时候 起效
+  // unbind:()=>{
+  //   el.removeEventListener('click',()=>{
+  //     if(binding.value==undefined){
+  //       router.go(-1);
+  //     }else{
+  //       router.replace(binding.value)
+  //     }
+  //   })
+  // }
+})
+
 
 /* eslint-disable no-new */
 new Vue({

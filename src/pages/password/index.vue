@@ -1,5 +1,8 @@
 <template>
-  <div class="demo">
+  <div>
+     <header class="title">
+      <i class="back" v-back="'home'"></i>销售详情
+    </header>
     <div class="title">
       TYAreaPicker
     </div>
