@@ -53,16 +53,22 @@ import { Toast ,Indicator} from 'mint-ui';
               console.log(err);
             });
           }else{
-            Toast({
-             message: '手机号码格式不正确',
-             duration: 1000,
-           });
+          //   Toast({
+          //    message: '手机号码格式不正确',
+          //    duration: 1000,
+          //  });
+            this.$toast({
+              msg:'手机号码格式不正确'
+            })
           }
         }else{
-         Toast({
-           message: '请输入账号和密码',
-           duration: 1000,
-         });
+        //  Toast({
+        //    message: '请输入账号和密码',
+        //    duration: 1000,
+        //  });
+          this.$toast({
+            msg:'请输入账号和密码'
+          })
         }
       }
     }

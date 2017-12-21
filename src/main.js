@@ -8,8 +8,12 @@ import store from './store'
 import './util/css/reset.css'
 import './util/css/common.css'
 
-
-
+//引入插件
+import toast from './plugs/toast'
+Vue.use(toast,{
+  pos:'bottom', //默认位置
+  delay:1500    //默认消失时间
+});
 
 
 // mint ui

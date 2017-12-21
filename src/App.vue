@@ -1,9 +1,9 @@
 <template>
   <div id="app">
     <transition name="slide">
-      <keep-alive exclude="nokeep">
+      <!-- <keep-alive exclude="nokeep"> -->
         <router-view class="child-view"></router-view>
-      </keep-alive>
+      <!-- </keep-alive> -->
     </transition>
   </div>
 </template>
